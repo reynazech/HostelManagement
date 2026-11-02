@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MessTime – Log in</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="card">
+    <section class="login">
+      <header>
+        <div class="logo" aria-hidden="true">MT</div>
+        <h1>Welcome to MessTime</h1>
+        <p class="muted">Please log in to your account</p>
+      </header>
+
+      <form>
+        <label for="username">Email or phone number</label>
+        <input id="username" name="username" type="text" autocomplete="username" required>
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+
+        <button type="submit" class="btn-primary">Log in</button>
+        <a href="#" class="muted forgot">Forgot password?</a>
+      </form>
+
+      <footer>
+        <span>Don't have an account?</span>
+        <a href="#" class="btn-outline">Create one</a>
+      </footer>
+    </section>
+
+    <aside class="about">
+      <h2>Making mess, mess-free</h2>
+      <p>MessTime gives your hostel mess a more organised way to serve meals,
+        so every student has a great experience at mealtimes.</p>
+    </aside>
+  </main>
+</body>
+</html>
