@@ -3,6 +3,8 @@
 Students scan a personal QR code at the mess counter, and MessTime records which meal they ate.
 Each student can be marked once per meal per day.
 
+**Live site:** [messtime.reynazech.tech](https://messtime.reynazech.tech) (the login page from `web/`)
+
 ## Setup
 
 Requires Python 3.10+.
@@ -45,6 +47,17 @@ messtime/
   qr.py     QR generation and webcam scanning
 web/        login page (front end only, not wired to a backend yet)
 tests/      pytest tests
+```
+
+## Deployment
+
+The `web/` folder is served at https://messtime.reynazech.tech from the VPS. A small Caddy
+container in `/docker/messtime` serves the files, and the main Caddy proxy (`/docker/todoapp`)
+routes the subdomain to it and handles HTTPS. To publish changes to `web/`:
+
+```bash
+scp web/* root@reynazech.tech:/docker/messtime/site/
+ssh root@reynazech.tech 'cp /docker/messtime/site/login.html /docker/messtime/site/index.html'
 ```
 
 ## Tests
